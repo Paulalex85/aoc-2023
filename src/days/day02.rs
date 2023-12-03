@@ -1,6 +1,6 @@
 use itertools::Itertools;
 use nom::bytes::complete::tag;
-use nom::character::complete::{alphanumeric1, line_ending, not_line_ending, u8};
+use nom::character::complete::{alphanumeric1, line_ending, u8};
 use nom::combinator::map;
 use nom::IResult;
 use nom::multi::{separated_list0, separated_list1};
@@ -85,10 +85,7 @@ impl Day for Day02 {
     type Input = Vec<Game>;
 
     fn parse(input: &str) -> IResult<&str, Self::Input> {
-        separated_list0(
-            line_ending,
-            map(not_line_ending, |s: &str| parse_game(s).unwrap().1),
-        )(input)
+        separated_list0(line_ending,parse_game)(input)
     }
 
     type Output1 = usize;
