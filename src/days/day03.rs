@@ -172,7 +172,7 @@ fn get_nb(input: &HashMap<(u32, u32), char>, x: u32, y: u32, max_x: u32, max_y: 
 
     //left
     let mut x_check: u32 = x;
-    while true {
+    loop {
         x_check = match x_check.checked_sub(1) {
             Some(_x) => _x,
             None => break
@@ -183,7 +183,7 @@ fn get_nb(input: &HashMap<(u32, u32), char>, x: u32, y: u32, max_x: u32, max_y: 
     }
 
     x_check = x;
-    while true {
+    loop {
         x_check += 1;
 
         if is_in_bounds(x_check as i32, y as i32, max_x, max_y) && is_pos_digit(input, x_check, y) {
