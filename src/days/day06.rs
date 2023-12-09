@@ -14,14 +14,14 @@ impl Day for Day06 {
     type Input = Data;
 
     fn parse(_input: &str) -> IResult<&str, Self::Input> {
-        let data = Data {
-            time: vec![58, 81, 96, 76],
-            distance: vec![434, 1041, 2219, 1218]
-        };
         // let data = Data {
-        //     time: vec![7, 15, 30],
-        //     distance: vec![9, 40, 200]
+        //     time: vec![58, 81, 96, 76],
+        //     distance: vec![434, 1041, 2219, 1218]
         // };
+        let data = Data {
+            time: vec![7, 15, 30],
+            distance: vec![9, 40, 200]
+        };
         Ok(("", data))
     }
 
